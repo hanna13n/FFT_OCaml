@@ -25,9 +25,9 @@ let rec fft a n w =
 let multiply_pol () = 
 
    (* Reading the inputs *)
-   print_endline "Degree of first polynomial (int) :";
+   print_endline "Degree of first polynomial :";
    let n1 = read_int() in 
-   print_endline "Degree of second polynomial (int) :";
+   print_endline "Degree of second polynomial :";
    let n2 = read_int() in 
 
    (* Evaluating the degree of the product polynomial *)
@@ -37,13 +37,13 @@ let multiply_pol () =
    let b1 = Array.make n { re = 0.0; im = 0.0 } in
 
    (* First polynomial *)
-   print_endline "Coefficient vector of 1st polynomial (float) :";
+   print_endline "Coefficient vector of 1st polynomial :";
    for i = 0 to n1 do 
       a1.(i) <- {re = read_float(); im = 0.0 };
    done;
 
    (* Second polynomial *)
-   print_endline "Coefficient vector of 2nd polynomial (float) :";
+   print_endline "Coefficient vector of 2nd polynomial :";
    for i = 0 to n2 do 
       b1.(i) <- {re = read_float(); im = 0.0 };
    done;
@@ -66,7 +66,7 @@ let multiply_pol () =
 
    (* Printing the Product *)
    print_endline "Coefficient vector of product :" ;
-   Array.iteri (fun i di -> if i < (n1 + n2 + 1) then Printf.printf "%.1f " di.re) d;
+   Array.iteri (fun i di -> if i < (n1 + n2 + 1) then Printf.printf "%.0f " di.re) d;
    print_newline ();
 
    print_endline "The product polynomial :";
