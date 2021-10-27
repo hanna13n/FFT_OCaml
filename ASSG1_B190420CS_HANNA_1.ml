@@ -65,8 +65,9 @@ let multiply_pol () =
    let d = Array.map (fun c -> { re = c.re /. (float_of_int n); im = 0. }) c2 in
 
    (* Printing the Product *)
-   print_endline "Coefficient vector of product :" ;
+   print_endline "\nCoefficient vector of product :" ;
    Array.iteri (fun i di -> if i < (n1 + n2 + 1) then Printf.printf "%.0f " di.re) d;
+   print_newline ();
    print_newline ();
 
    print_endline "The product polynomial :";
@@ -74,6 +75,7 @@ let multiply_pol () =
    (fun i di -> 
       if i < (n1 + n2) then Printf.printf "%.0fx^%d + " di.re i  
       else if i = (n1 + n2) then Printf.printf "%.0fx^%d" di.re i) d;
+   print_newline ();
    print_newline ()
    
 let () = multiply_pol ()
